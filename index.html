@@ -11,176 +11,255 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --netflix-red: #e50914;
+            --netflix-dark: #221f1f;
+            --netflix-light: #f5f5f1;
+            --accent-yellow: #FFB000;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e50914 0%, #221f1f 100%);
+            background: linear-gradient(135deg, var(--netflix-red) 0%, var(--netflix-dark) 100%);
+            background-attachment: fixed;
             color: #333;
             min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         header {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
             text-align: center;
+            border-top: 5px solid var(--netflix-red);
         }
 
         header h1 {
-            color: #e50914;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            color: var(--netflix-red);
+            font-size: 3em;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
         header p {
             color: #666;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
         .badges {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .badge {
-            background: linear-gradient(135deg, #e50914, #b80710);
+            background: linear-gradient(135deg, var(--netflix-red), #b80710);
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .card h2 {
-            color: #e50914;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .features {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .features h2 {
-            color: #e50914;
-            margin-bottom: 20px;
-        }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .feature-item {
-            padding: 15px;
-            background: #f5f5f5;
-            border-left: 4px solid #e50914;
-            border-radius: 5px;
-        }
-
-        .feature-item h3 {
-            color: #e50914;
-            margin-bottom: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--netflix-red);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
         }
 
         .stat-number {
-            color: #e50914;
-            font-size: 2em;
+            color: var(--netflix-red);
+            font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .stat-label {
             color: #666;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 2.2em;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid var(--accent-yellow);
+            padding-bottom: 15px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--netflix-red), #b80710);
+            padding: 20px;
+            color: white;
+        }
+
+        .card-header h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .features h2 {
+            color: var(--netflix-red);
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.05), rgba(255, 176, 0, 0.05));
+            border-left: 4px solid var(--netflix-red);
+            border-radius: 8px;
+        }
+
+        .feature-item h3 {
+            color: var(--netflix-red);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.5;
             font-size: 0.95em;
         }
 
         footer {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 30px;
             text-align: center;
             color: #666;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid var(--netflix-red);
+        }
+
+        footer a {
+            color: var(--netflix-red);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #b80710;
+        }
+
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 25px;
+                padding: 30px 20px;
             }
 
             header h1 {
                 font-size: 1.8em;
             }
 
-            .content {
+            .stats {
                 grid-template-columns: 1fr;
             }
 
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
+            .section-title {
+                font-size: 1.5em;
             }
 
             .feature-list {
@@ -196,9 +275,9 @@
             <p>Exploratory Data Analysis of Netflix Titles</p>
             <div class="badges">
                 <span class="badge">Python 3.7+</span>
-                <span class="badge">Pandas</span>
-                <span class="badge">Matplotlib</span>
-                <span class="badge">Seaborn</span>
+                <span class="badge">Pandas & NumPy</span>
+                <span class="badge">Matplotlib & Seaborn</span>
+                <span class="badge">Data-Driven Insights</span>
             </div>
         </header>
 
@@ -222,43 +301,112 @@
         </div>
 
         <div class="features">
-            <h2>Key Features</h2>
+            <h2>Analysis Highlights</h2>
             <div class="feature-list">
                 <div class="feature-item">
-                    <h3>Data Processing</h3>
-                    <p>Using Pandas for comprehensive data manipulation and analysis</p>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Deep dive into Netflix's content library with statistical analysis of movies, TV shows, genres, and more.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Statistical Analysis</h3>
-                    <p>Deep insights into Netflix content patterns and trends</p>
+                    <h3>High-Quality Visualizations</h3>
+                    <p>Professional-grade charts with Netflix branding showing trends, distributions, and patterns in content.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Visualizations</h3>
-                    <p>High-quality plots using Matplotlib and Seaborn</p>
+                    <h3>Data-Driven Insights</h3>
+                    <p>Discover which countries produce the most content, top genres, rating distributions, and growth trends.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Reproducible</h3>
-                    <p>Well-documented code for easy reproduction and extension</p>
+                    <h3>Reproducible Research</h3>
+                    <p>Well-documented Python code for easy reproduction, modification, and extension of the analysis.</p>
                 </div>
             </div>
         </div>
 
-        <div class="content">
+        <h2 class="section-title">Content Distribution</h2>
+        <div class="gallery">
             <div class="card">
-                <h2>Movies vs TV Shows</h2>
-                <img src="movies_vs_tv_shows.png" alt="Movies vs TV Shows Distribution">
-                <p>This visualization shows the distribution between movies and TV shows in Netflix's catalog. The analysis reveals the balance between the two content types and their prevalence in the library.</p>
+                <div class="card-header">
+                    <h2>Movies vs TV Shows</h2>
+                </div>
+                <div class="card-body">
+                    <img src="movies_vs_tv_shows.png" alt="Movies vs TV Shows Distribution">
+                    <p class="card-description">This visualization shows the balance between movies and TV shows in Netflix's catalog. Compare the volume of each content type and understand Netflix's content strategy.</p>
+                </div>
             </div>
 
             <div class="card">
-                <h2>Release Year Distribution</h2>
-                <img src="movie_release_years.png" alt="Movie Release Years Distribution">
-                <p>Explore the distribution of movie release years across the Netflix catalog. This visualization highlights trends in content production and the types of content Netflix focuses on.</p>
+                <div class="card-header">
+                    <h2>Release Year Trends</h2>
+                </div>
+                <div class="card-body">
+                    <img src="movie_release_years.png" alt="Movie Release Years Distribution">
+                    <p class="card-description">Explore how the release years of content on Netflix are distributed. This reveals Netflix's focus on recent vs. classic content and provides insights into their acquisition strategy.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Genre & Country Analysis</h2>
+        <div class="gallery">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Top 12 Genres</h2>
+                </div>
+                <div class="card-body">
+                    <img src="top_genres.png" alt="Top Genres Distribution">
+                    <p class="card-description">The most popular content genres on Netflix. Understand which types of shows and movies dominate the platform and attract the largest audience.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Top 12 Countries</h2>
+                </div>
+                <div class="card-body">
+                    <img src="top_countries.png" alt="Top Countries Distribution">
+                    <p class="card-description">Which countries produce the most content for Netflix? This analysis reveals the geographical distribution of content creation and Netflix's global partnerships.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Content Details</h2>
+        <div class="gallery">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Content Ratings</h2>
+                </div>
+                <div class="card-body">
+                    <img src="content_ratings.png" alt="Content Ratings Distribution">
+                    <p class="card-description">Distribution of content ratings (G, PG, PG-13, R, etc.) on Netflix. See how Netflix balances content for different age groups and audiences.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Duration Analysis</h2>
+                </div>
+                <div class="card-body">
+                    <img src="content_duration.png" alt="Content Duration Distribution">
+                    <p class="card-description">Compare the duration patterns between movies (in minutes) and TV shows (in seasons). Understand Netflix's typical content length strategy.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Growth Timeline</h2>
+        <div class="gallery" style="grid-template-columns: 1fr;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Content Added Over Time</h2>
+                </div>
+                <div class="card-body">
+                    <img src="content_added_timeline.png" alt="Content Added Timeline">
+                    <p class="card-description">Track Netflix's content growth over the years. This timeline shows how Netflix has expanded its library and reveals periods of aggressive content acquisition.</p>
+                </div>
             </div>
         </div>
 
         <footer>
-            <p>&copy; 2026 Netflix EDA | Open Source Project | <a href="https://github.com/Viblla/netflix-eda" style="color: #e50914;">GitHub Repository</a></p>
+            <p>&copy; 2026 Netflix EDA | Open Source Project | <a href="https://github.com/Viblla/netflix-eda">GitHub Repository</a></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Data-driven insights into Netflix's content strategy</p>
         </footer>
     </div>
 </body>
